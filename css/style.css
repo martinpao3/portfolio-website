@@ -1,0 +1,289 @@
+:root {
+    --primary-background-color: #ADD8E6;
+    --link-color: #357b70;
+    --visited-link-color: #f30101;
+    --active-link-color: #489c79;
+    --button-border-reset: none;
+    --button-font-family: inherit;
+    --button-text-decoration: none;
+    --button-padding: 10px;
+    --button-border-radius: 3px;
+    --button-border-bottom: 2px;
+    --button-border-line-type: solid;
+    --button-primary-background-color: #357b70;
+    --button-primary-text-color: #fff;
+    --button-secondary-background-color: #30b354;
+    --button-secondary-text-color: #2b2b2b;
+    --button-border: rgba(0, 0, 0, 0.3);
+    --grid-background-color: #D3D3D3;
+    --sun-animation-color-start: #edc655;
+    --sun-animation-color-middle: #fcffad;
+    --sun-animation-color-end: #f76414;
+    --site-font: 'Black Ops One', sans-serif;
+    --header-font-weight: 700px;
+    --section-max-width: 700px;
+    --section-margins: 0 auto;
+    --animation-iteration: infinite;
+    --animation-direction: alternate;
+    --animation-timing-function: linear;
+}
+
+body {
+    font-family: var(--site-font);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    background: var(--primary-background-color);
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: var(--header-font-weight);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: var(--header-font-weight);
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: var(--header-font-weight);
+    font-variant: small-caps;
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:hover, a:focus {
+    /* No underlining when hovering over a link */
+    text-decoration: none;
+}
+
+a:visited {
+    /* visited link */
+    color: var(--visited-link-color);
+}
+
+a:active {
+    /* selected link */
+    color: var(--active-link-color);
+}
+
+button {
+    /* overwrites browser defaults and resets the border */
+    border: var(--button-border-reset);
+    /* takes the font from the outer container */
+    font-family: var(--button-font-family);
+    /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+    background-color: var(--button-primary-background-color);
+    color: var(--button-primary-text-color);
+    text-decoration: var(--button-text-decoration);
+    /* adds spacing to the button */
+    padding: var(--button-padding);
+    border-radius: var(--button-border-radius);
+    /* gives the button a bottom order with a width of 2px, a type of solid, and a color in RGBA format */
+    border-bottom: var(--button-border-bottom) var(--button-border-line-type) var(--button-border);
+}
+
+button:hover, button:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+}
+
+.button_secondary {
+    background-color: var(--button-secondary-background-color);
+    color: var(--button-secondary-text-color);
+}
+
+
+
+.profile_portrait {
+    float: left;
+    width: 250px;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+
+.page-footer {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.profile {
+    max-width: var(--section-max-width);
+    margin: var(--section-margins);
+}
+
+.about {
+    max-width: var(--section-max-width);
+    margin: var(--section-margins);
+    text-align: center;
+}
+
+ol {
+    list-style-type: none;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.page-header {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+
+.page-header_item {
+    flex: 0 1 200px;
+    width: 50px;
+    height: 50px;
+}
+
+.page-header_item:last-child {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.navigation-list {
+    list-style-type: none;
+}
+
+.navigation-list li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.navigation-list_item--active {
+    text-decoration: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.grid_item {
+    background-color: var(--grid-background-color);
+    border: dotted;
+    padding: 10px;
+}
+
+.grid_item:last-child {
+    grid-column: 3 / 3;
+    grid-row: 1 / 3;
+}
+
+.button, button {
+    /* overwrites browser defaults and resets the border */
+    border: var(--button-border-reset);
+    display: inline-block;
+    /* takes the font from the outer container */
+    font-family: var(--button-font-family);
+    /* styles the button */
+    background-color: var(--button-primary-background-color);
+    color: var(--button-primary-text-color);
+    text-decoration: var(--button-text-decoration);
+    padding: var(--button-padding);
+    border-radius: var(--button-border-radius);
+    /* width of the border, type, color */
+    border-bottom: var(--button-border-bottom) var(--button-border-line-type) var(--button-border);
+    transition: 0.2s opacity;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+}
+
+@keyframes color-change {
+    0% {
+        fill: var(--sun-animation-color-start);
+    }
+    50% {
+        fill: var(--sun-animation-color-middle);
+    }
+    100% {
+        fill: var(--sun-animation-color-end);
+    }
+}
+
+
+
+.sun {
+    animation-duration: 4s;
+    animation-name: color-change;
+    animation-iteration-count: var(--animation-iteration);
+    animation-direction: var(--animation-direction);
+    animation-timing-function: var(--animation-timing-function);
+}
+
+@keyframes cloud-move {
+    from {
+        transform: translate(0, 50px);
+    }
+    to {
+        transform: translate(200px, 50px);
+    }
+}
+
+.cloud-front {
+    animation-duration: 30s;
+    animation-name: cloud-move;
+    animation-iteration-count: var(--animation-iteration);
+    animation-direction: var(--animation-direction);
+    animation-timing-function: var(--animation-timing-function);
+}
+
+@keyframes cloud-move-reverse {
+    from {
+        transform: translate(446px, 48px);
+    }
+    to {
+        transform: translate(100px, 48px);
+    }
+}
+
+.cloud-back {
+    animation: 34s cloud-move-reverse var(--animation-iteration) var(--animation-direction) var(--animation-timing-function);
+}
+
+
+
+@media all and (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+        grid-template: 1fr 1fr;
+    }
+}
+
+@media all and (max-width: 750px) {
+    .grid {
+        grid-gap: 10px;
+    }
+    .grid_item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h1 {
+        font-size: 22px;
+    }
+}
